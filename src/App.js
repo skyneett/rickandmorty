@@ -15,9 +15,9 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div className="flex flex-col min-h-screen bg-gray-100">
+      <div className="app-container">
         <Header onSearch={setSearch} />
-        <main className="flex-1">
+        <main className="main-content">
           <CharacterList search={search} />
         </main>
         <Footer />

@@ -2,12 +2,12 @@ import React from "react";
 
 const Header = ({ onSearch }) => {
   return (
-    <header className="bg-gray-900 text-white p-4 flex flex-col md:flex-row items-center justify-between">
-      <h1 className="text-2xl font-bold mb-2 md:mb-0">Rick and Morty App</h1>
+    <header style={{ background: '#111827', color: 'white', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Rick and Morty App</h1>
       <input
         type="text"
         placeholder="Buscar personaje..."
-        className="p-2 rounded text-black w-full md:w-64"
+        style={{ padding: '0.5rem', borderRadius: '0.5rem', width: '100%', maxWidth: 320, color: '#111827', border: '1px solid #e5e7eb' }}
         onChange={e => onSearch(e.target.value)}
       />
     </header>

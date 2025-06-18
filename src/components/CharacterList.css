@@ -1,0 +1,12 @@
+.character-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-red-500 {
+  color: #dc2626;
+}

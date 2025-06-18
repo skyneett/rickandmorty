@@ -1,0 +1,31 @@
+.character-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.character-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+.character-species {
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+.character-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e5e7eb;
+  color: #374151;
+}
+.character-status.Alive {
+  background: #bbf7d0;
+  color: #166534;
+}
+.character-status.Dead {
+  background: #fecaca;
+  color: #991b1b;
+}
