@@ -1,15 +1,42 @@
 import React from "react";
+import "./Header.css";
 
-const Header = ({ onSearch }) => {
+const Header = ({ onSearch, onSort, sortField, sortDirection }) => {
   return (
-    <header style={{ background: '#111827', color: 'white', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-      <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Rick and Morty App</h1>
-      <input
-        type="text"
-        placeholder="Buscar personaje..."
-        style={{ padding: '0.5rem', borderRadius: '0.5rem', width: '100%', maxWidth: 320, color: '#111827', border: '1px solid #e5e7eb' }}
-        onChange={e => onSearch(e.target.value)}
-      />
+    <header className="header">
+      <div className="header-content">
+        <h1 className="header-title">Rick and Morty App</h1>
+        <div className="header-controls">
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Buscar personaje..."
+              className="search-input"
+              onChange={e => onSearch(e.target.value)}
+            />
+          </div>
+          <div className="sort-controls">
+            <button 
+              onClick={() => onSort('name')} 
+              className={`sort-button ${sortField === 'name' ? sortDirection : ''}`}
+            >
+              Nombre {sortField === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+            </button>
+            <button 
+              onClick={() => onSort('gender')} 
+              className={`sort-button ${sortField === 'gender' ? sortDirection : ''}`}
+            >
+              Género {sortField === 'gender' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+            </button>
+            <button 
+              onClick={() => onSort('type')} 
+              className={`sort-button ${sortField === 'type' ? sortDirection : ''}`}
+            >
+              Tipo {sortField === 'type' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
