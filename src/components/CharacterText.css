@@ -3,40 +3,75 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1rem;
+  padding: 1.25rem;
+  background: white;
+  position: relative;
 }
 .character-name {
-  font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  margin-bottom: 0.25rem;
-  color: #111827;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 .character-species {
   color: #4b5563;
-  margin-bottom: 0.25rem;
-  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 500;
 }
 .character-gender, .character-type {
   color: #6b7280;
-  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
-  margin-bottom: 0.25rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.character-gender::before {
+  content: '•';
+  color: #9ca3af;
 }
 .character-status {
-  padding: 0.25rem 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.4rem 1rem;
   border-radius: 9999px;
-  font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+  font-size: 0.85rem;
   font-weight: 600;
-  background: #e5e7eb;
-  color: #374151;
-  margin-top: 0.5rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 .character-status.Alive {
-  background: #bbf7d0;
-  color: #166534;
+  background: #dcfce7;
+  color: #15803d;
 }
 .character-status.Dead {
-  background: #fecaca;
+  background: #fee2e2;
   color: #991b1b;
+}
+.character-status.unknown {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Efecto hover en el status */
+.character-status:hover {
+  transform: scale(1.05);
+}
+
+/* Separador decorativo */
+.character-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #00b4d8, #90e0ef);
+  border-radius: 3px;
 }
 
 /* Estilos para los botones de ordenamiento */

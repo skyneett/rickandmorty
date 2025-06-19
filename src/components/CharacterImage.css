@@ -1,21 +1,37 @@
 .character-image-container {
   position: relative;
   width: 100%;
-  max-width: 300px;
-  aspect-ratio: 1;
+  padding-top: 100%; /* Aspecto cuadrado */
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
 }
 
 .character-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.character-image:hover {
-  transform: scale(1.05);
+.character-image-container:hover .character-image {
+  transform: scale(1.1);
+}
+
+.character-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    transparent 20%
+  );
+  pointer-events: none;
 }
 
 .image-error-message {
@@ -23,9 +39,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   text-align: center;
   padding: 8px;
   font-size: 0.875rem;
+  backdrop-filter: blur(4px);
 }
